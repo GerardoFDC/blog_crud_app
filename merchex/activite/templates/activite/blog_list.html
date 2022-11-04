@@ -1,0 +1,47 @@
+{% extends 'activite/base1.html' %}
+
+{% block title %}
+
+ Bienvenu
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">BlogsBook</a>
+    </div>
+</nav>
+
+<div class="col-md-6 well">
+<div class="header">
+<h1>Les Blogs</h1>
+<button class="btn btn-success btn-sm" data-toggle="modal"><a href="{% url 'blog-create' %}">Créer un nouveau Blog</a></button>
+</div>
+
+<ul>
+
+ <table class="table table-bordered">
+    <thead class="alert-info">
+        <tr>
+            <th> Titre du Blog</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for blog in blogs %}
+        <tr>
+            <td> <li><a href="{% url 'blog-detail' blog.id %}">{{ blog.title }}</a></td>
+                <td><button class="btn btn-warning btn-sm" data-toggle="modal"><a href="{% url 'blog-update' blog.id %}">modifier</a></button>
+                    <button class="btn btn-danger btn-sm" data-toggle="modal"><a href="{% url 'blog-delete' blog.id %}">supprimer</a></button></td>   
+
+        </tr>  
+        {% endfor %}  
+    </tbody>    
+ </table>   
+ 
+
+</li>
+ 
+</ul>
+
+{% endblock %}
+</div>

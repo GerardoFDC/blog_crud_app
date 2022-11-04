@@ -1,0 +1,20 @@
+{% extends 'activite/base1.html' %}
+
+
+{% block content %}
+
+<h2>{{ blog.title }}</h2>
+<div class="col-md-4 well">
+<ul>
+ <li>Titre : {{ blog.title }}</li>
+</ul>
+
+<p>{{ blog.description }}</p>
+<hr class="my-4">
+
+<button class="btn btn-warning btn-sm" data-toggle="modal"><a href="{% url 'blog-update' blog.id %}">Modifier ce blog</a></button>
+<button class="btn btn-danger btn-sm" data-toggle="modal"><a href="{% url 'blog-delete' blog.id %}">Supprimer ce blog</a></button>
+
+<button class="btn btn-primary btn-sm" data-toggle="modal"><a href="{% url 'blog-list' %}">Retourner à la liste des blogs</a></button>
+</div>
+{% endblock %}

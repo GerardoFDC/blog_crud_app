@@ -1,0 +1,13 @@
+{% extends 'activite/base1.html' %}
+
+{% block content %}
+
+<h1>Modifiez votre blog</h1>
+
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Envoyer">
+</form>
+<button class="btn btn-primary btn-sm" data-toggle="modal"><a href="{% url 'blog-list' %}">retour</a></button>
+{% endblock %}

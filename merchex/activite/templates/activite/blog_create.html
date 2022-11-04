@@ -1,0 +1,16 @@
+
+
+
+{% block content %}
+
+
+<p>Bienvenu dans mon Blog!!</p>
+<div class="col-md-6 well">
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Envoyer">
+</form>
+<button class="btn btn-primary btn-sm" data-toggle="modal"><a href="{% url 'blog-list' %}">retour</a></button>
+</div>
+{% endblock %}

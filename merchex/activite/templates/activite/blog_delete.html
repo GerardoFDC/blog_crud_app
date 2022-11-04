@@ -1,0 +1,13 @@
+{% extends 'activite/base1.html' %}
+
+
+{% block content %}
+<h1>Supprimer le blog</h1>
+
+  <p>Etes-vous sûr de vouloir supprimer le blog : {{ blog.title }} ?</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Supprimer">
+    </form>
+    <button class="btn btn-primary btn-sm" data-toggle="modal"><a href="{% url 'blog-list' %}">annuler</a></button>    
+{% endblock %}
